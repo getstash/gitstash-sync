@@ -6,6 +6,6 @@ export default function (error, req, res, next) { // jshint unused:false
 		log.warn('unknown', [error]);
 	}
 
-	res.status(500);
+	res.status(404);
 	res.json(error);
 }
