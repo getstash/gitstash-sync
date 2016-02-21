@@ -39,6 +39,7 @@ router.get('/:user_name/:repo/*', async (req, res) => {
 	console.log(our_id.id);
 
 	// now load the thing from file
+	// DANGER: this is very very very insecure... DO NOT RELEASE IN PRODUCTION
 	console.log(`${process.cwd()}/repos/${our_id.id}/${req.params[0]}`)
 	res.sendFile(`${process.cwd()}/repos/${our_id.id}/${req.params[0]}`)
 });

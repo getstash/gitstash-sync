@@ -24,6 +24,10 @@ const sync = new Sync(api, github, {
 App.set('github', github);
 App.set('api', api);
 App.set('sync', sync);
+App.set('githubAuth', {
+    client_id: 'some id',
+    client_secret: 'some secret',
+});
 
 const port = process.env.PORT || 3000;
 App.listen(port, () => log.info('http_listening', { port: port }));
