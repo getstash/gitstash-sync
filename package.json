@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "debug": "nodemon --exec babel-node -- bin/start",
+    "start": "babel-node bin/start"
+  },
+  "dependencies": {
+    "babel-cli": "^6.3.26",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-1": "^6.3.13",
+    "body-parser": "^1.14.2",
+    "cuvva-log": "^0.9.0",
+    "express": "^4.13.4",
+    "express-promise-router": "^1.0.0",
+    "json-client-node": "^0.8.1",
+    "nodegit": "^0.11.2",
+    "rimraf": "^2.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.8.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-1"
+    ]
+  }
+}

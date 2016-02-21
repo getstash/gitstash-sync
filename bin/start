@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+import log from 'cuvva-log';
+import JsonClient from 'json-client-node';
+import App from '../app';
+import Sync from '../lib/sync';
+
+log.setMinLogLevel('debug');
+log.setHandler('fatal', () => { process.exit(1); });
+
+const api = JsonClient('https://gitstash.dfl.mn/');
+
+const github = JsonClient('https://api.github.com/', {
+	headers: {
+		Accept: 'application/vnd.github.v3+json',
+	},
+});
+
+const sync = new Sync(api, github, {
+	client_id: 'some id',
+	client_secret: 'some secret',
+});
+
+App.set('github', github);
+App.set('api', api);
+App.set('sync', sync);
+
+const port = process.env.PORT || 3000;
+App.listen(port, () => log.info('http_listening', { port: port }));
