@@ -5,7 +5,7 @@ import JsonClient from 'json-client-node';
 import App from '../app';
 import Sync from '../lib/sync';
 
-log.setMinLogLevel('debug');
+log.setMinLogLevel('info');
 log.setHandler('fatal', () => { process.exit(1); });
 
 const api = JsonClient('https://gitstash.dfl.mn/');
